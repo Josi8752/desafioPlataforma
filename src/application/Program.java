@@ -16,8 +16,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 
 		List<Lesson> list = new ArrayList<>();
-		Video video = null;
-		Task task = null;
+
 		System.out.print("Quantas aulas tem o curso? ");
 		int n = sc.nextInt();
 
@@ -34,22 +33,25 @@ public class Program {
 				System.out.print("Duração em segundos: ");
 				Integer durac = sc.nextInt();
 				list.add(new Video(title, url, durac));
-			}
-			else {
+			} else {
 				sc.nextLine();
 				System.out.print("Descrição: ");
 				String desc = sc.nextLine();
 				System.out.print("Quantidade de questões: ");
 				Integer quant = sc.nextInt();
-				list.add( new Task(title, desc, quant));
+				list.add(new Task(title, desc, quant));
 			}
-	
 		}
+
 		System.out.println();
-		System.out.printf("DURAÇÃO TOTAL DO CURSO = ");	
-	for (Lesson lesson : list) {
-		System.out.println(lesson.duration());
-	}	
+		System.out.print("DURAÇÃO TOTAL DO CURSO = ");
+		Integer aux = 0;
+		for (Lesson lesson : list) {
+			aux += lesson.duration();
+		}
+		System.out.println(aux + " segundos");
+
 		sc.close();
-	} 
+	}
+
 }

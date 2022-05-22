@@ -4,6 +4,8 @@ public abstract class Lesson {
 
 	private String title;
 
+	
+	
 	public Lesson() {
 		super();
 	}
@@ -22,10 +24,13 @@ public abstract class Lesson {
 	}
 
 	public abstract Integer duration();
-
+	
+	
 	@Override
 	public String toString() {
 		return title;
 	}
+
+	
 
 }

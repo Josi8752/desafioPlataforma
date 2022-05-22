@@ -1,10 +1,9 @@
 package entities;
-
 public class Task extends Lesson {
 
 	private String description;
 	private Integer questionCount;
-
+   
 	public Task() {
 		super();
 	}
@@ -14,7 +13,7 @@ public class Task extends Lesson {
 		this.description = description;
 		this.questionCount = questionCount;
 	}
-
+	
 	public String getDescription() {
 		return description;
 	}
@@ -29,9 +28,11 @@ public class Task extends Lesson {
 
 	@Override
 	public Integer duration() {
-		return questionCount *  5 * 60;
-	}
-
+		
+		return questionCount * 5 * 60;
+		}
+	
+	
 	@Override
 	public String toString() {
 		return description + questionCount;
